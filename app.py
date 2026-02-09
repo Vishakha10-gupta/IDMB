@@ -33,19 +33,4 @@ if uploaded_file:
     nb.fit(X_train_tfidf, y_train)
 
     # Predictions
-    y_pred = nb.predict(X_test_tfidf)
-
-    # Accuracy
-    st.write(f"Accuracy: {accuracy_score(y_test, y_pred):.4f}")
-
-    # Confusion matrix
-    fig, ax = plt.subplots()
-    sns.heatmap(confusion_matrix(y_test, y_pred), annot=True, fmt='d', cmap='mako', ax=ax)
-    ax.set_title("Sentiment Analysis Confusion Matrix")
-    st.pyplot(fig)
-
-    # User input
-    user_review = st.text_input("Test a Review")
-    if user_review:
-        vec = tfidf.transform([user_review])
-        st.write(f"Sentiment: {'Positive' if nb.predict(vec)[0] == 1 else 'Negative'}")
+    y_pred = nb.predict(X_test_t
