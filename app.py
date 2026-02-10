@@ -33,4 +33,5 @@ if uploaded_file:
     nb.fit(X_train_tfidf, y_train)
 
     # Predictions
-    y_pred = nb.predict(X_test_t
+    y_pred = nb.predict(X_test_tfidf)
+
